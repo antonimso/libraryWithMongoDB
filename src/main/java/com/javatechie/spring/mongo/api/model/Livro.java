@@ -6,17 +6,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Book")
 public class Livro {
 	@Id
-	private int id;
+	private Long id;
 
 	private String nome;
 	private String autor;
 	private int qtdPaginas;
 	private String genero;
+	private boolean alugado;
 
 	public Livro() {
 	}
 
-	public Livro(int id, String nome, String autor, int qtdPaginas, String genero) {
+	public Livro(Long id, String nome, String autor, int qtdPaginas, String genero) {
 		this.id = id;
 		this.nome = nome;
 		this.autor = autor;
@@ -24,11 +25,17 @@ public class Livro {
 		this.genero = genero;
 	}
 
-	public int getId() {
+	public Livro(Long id, String nome, String autor) {
+		this.id = id;
+		this.nome = nome;
+		this.autor = autor;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -62,6 +69,10 @@ public class Livro {
 
 	public void setGenero(String genero) {
 		this.genero = genero;
+	}
+
+	public void setAlugado(boolean alugado) {
+		this.alugado = alugado;
 	}
 
 	@Override
