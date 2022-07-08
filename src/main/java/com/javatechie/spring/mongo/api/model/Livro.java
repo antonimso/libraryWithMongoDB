@@ -12,6 +12,7 @@ public class Livro {
 	private String autor;
 	private int qtdPaginas;
 	private String genero;
+	private boolean alugado;
 
 	public Livro() {
 	}
@@ -68,6 +69,10 @@ public class Livro {
 
 	public void setGenero(String genero) {
 		this.genero = genero;
+	}
+
+	public void setAlugado(boolean alugado) {
+		this.alugado = alugado;
 	}
 
 	@Override

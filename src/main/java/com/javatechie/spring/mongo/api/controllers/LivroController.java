@@ -1,9 +1,9 @@
-package com.javatechie.spring.mongo.api.resource;
+package com.javatechie.spring.mongo.api.controllers;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.javatechie.spring.mongo.api.Service.LivroService;
+import com.javatechie.spring.mongo.api.service.LivroService;
 import org.springframework.web.bind.annotation.*;
 
 import com.javatechie.spring.mongo.api.model.Livro;
@@ -37,8 +37,7 @@ public class LivroController {
 
 	@PostMapping("/editBook")
 	public String editarLivro(@RequestBody Livro livro) {
-		livroService.editarLivro(livro);
-		return "Livro editado com o id : " + livro.getId();
+		return livroService.editarLivro(livro);
 	}
 
 	@DeleteMapping("/deleteBook/{id}")
