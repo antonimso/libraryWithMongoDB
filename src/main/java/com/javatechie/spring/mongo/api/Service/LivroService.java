@@ -2,6 +2,8 @@ package com.javatechie.spring.mongo.api.Service;
 
 import com.javatechie.spring.mongo.api.model.Livro;
 import com.javatechie.spring.mongo.api.repository.LivroRepository;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,8 +21,10 @@ public class LivroService {
         return repository.findAll();
     }
 
-    public Optional<Livro> findById(int id) {
-        return repository.findById(id);
+    public Optional<Livro> findPerParameters(Long id, String nome, String autor) {
+        Livro livro = new Livro(id, nome, autor);
+        Example<Livro> example = Example.of(livro, ExampleMatcher.matchingAll().withIgnoreCase());
+        return repository.findOne(example);
     }
 
     public void salvarLivro(Livro livro) {
