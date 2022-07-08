@@ -9,6 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SpringMongodbApplicationTests {
 
+	//testando somente quem realmente precisa
+	//EX: os metódos com regras de negócio ou validações específicas
+
 	@Test
 	public void contextLoads() {
 	}

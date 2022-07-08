@@ -27,7 +27,7 @@ public class LivroController {
 	public Optional<Livro> getLivroPorParametro(@RequestParam(required = false) Long id,
 												@RequestParam(required = false) String nome,
 												@RequestParam(required = false) String autor) {
-		return livroService.findPerParameters(id, nome, autor);
+		return livroService.procurarPorParametros(id, nome, autor);
 	}
 
 	@PostMapping("/addBook")

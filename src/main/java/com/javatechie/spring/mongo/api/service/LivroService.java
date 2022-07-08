@@ -21,7 +21,7 @@ public class LivroService {
         return repository.findAll();
     }
 
-    public Optional<Livro> findPerParameters(Long id, String nome, String autor) {
+    public Optional<Livro> procurarPorParametros(Long id, String nome, String autor) {
         Livro livro = new Livro(id, nome, autor);
         Example<Livro> example = Example.of(livro, ExampleMatcher.matchingAll().withIgnoreCase());
         return repository.findOne(example);
